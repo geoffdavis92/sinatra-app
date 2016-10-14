@@ -3,3 +3,4 @@ gem 'sinatra', :github => 'sinatra/sinatra'
 
 # deps
 gem 'haml'
+gem 'sass'

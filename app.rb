@@ -20,7 +20,7 @@ get '/' do
 	@page_data = {
 		:title => 'Home'
 	}
-
+	sass :index, :style => :expanded
 	haml :index, :layout => layout('default'), :locals => {:meta => @meta_data, :page => @page_data}
 end
 

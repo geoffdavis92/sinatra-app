@@ -17,6 +17,7 @@ GEM
       tilt
     mustermann (1.0.0.beta2)
     rack (2.0.1)
+    sass (3.4.22)
     tilt (2.0.5)
 
 PLATFORMS
@@ -24,6 +25,7 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  sass
   sinatra!
 
 BUNDLED WITH
