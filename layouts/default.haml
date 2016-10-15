@@ -1,5 +1,15 @@
 %html
 	%head
 		%title App
+		- external_stylesheet_url = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+		%link{:href => external_stylesheet_url, :rel => 'stylesheet'}
+		%link{:href => '/css/index.css', :rel => 'stylesheet'}
 	%body
-		= yield
+		= haml partial('header')
+		.container
+			.row
+				.col-sm-2
+				.col-sm-8
+					= yield
+				.col-sm-2
+		= haml partial('footer')
