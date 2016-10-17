@@ -11,6 +11,10 @@ def layout(layout_name)
 	return "../layouts/#{layout_name}".to_sym
 end
 
+def stylesheet(stylesheet_name)
+	return "../sass/#{stylesheet_name}".to_sym
+end
+
 # routes
 get '/' do 
 	@meta_data = {
@@ -20,7 +24,7 @@ get '/' do
 	@page_data = {
 		:title => 'Home'
 	}
-	sass :index, :style => :expanded
+	sass stylesheet('index'), :style => :expanded
 	haml :index, :layout => layout('default'), :locals => {:meta => @meta_data, :page => @page_data}
 end
 
