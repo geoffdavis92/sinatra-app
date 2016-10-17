@@ -1,0 +1,36 @@
+{
+  "name": "sinatra-app",
+  "description": "## Getting Started",
+  "version": "0.0.0",
+  "main": "package.json",
+  "scripts": {
+    "dashboard": "webpack-dashboard -- webpack-dev-server --config ./webpack.config.js --inline --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geoffdavis92/sinatra-app.git"
+  },
+  "keywords": [
+    "Sinatra",
+    "Ruby"
+  ],
+  "author": "Geoff Davis <geoffdavis92@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geoffdavis92/sinatra-app/issues"
+  },
+  "homepage": "https://github.com/geoffdavis92/sinatra-app#readme",
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-syntax-flow": "^6.13.0",
+    "babel-plugin-transform-flow-strip-types": "^6.14.0",
+    "babel-preset-es2015": "^6.16.0",
+    "flow-bin": "^0.33.0",
+    "webpack": "^1.13.2",
+    "webpack-dashboard": "^0.2.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
