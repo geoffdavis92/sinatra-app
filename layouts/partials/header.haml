@@ -1,2 +1,7 @@
 %header
-	%h1 
+	%h1= app[:title]
+	%nav
+		%ul{:class => 'inline'}
+			- app[:nav].each do |route| 
+				%li
+					%a.btn.btn-link{:href => route[:href]}= route[:text]

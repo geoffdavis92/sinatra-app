@@ -7,6 +7,20 @@ set :haml, :format => :html5
 set :layout_options => { :views => 'views', :layouts => 'layouts' }
 set :public_folder, File.dirname(__FILE__) + '/assets'
 
+app = {
+	:title => 'Sinatra Test',
+	:nav => [
+		{
+			:href => '/',
+			:text => 'Home'
+		},
+		{
+			:href => '/about',
+			:text => 'About'
+		}
+	]
+}
+
 # functions
 
 def layout(layout_name)
@@ -31,7 +45,27 @@ class Article
 		@title = title
 	end
 	def title
-		return @title
+		@title
+	end
+end
+class Meta
+	def initialize title, desc
+		@title = title
+		@desc = desc
+	end
+	def title
+		@title
+	end
+	def desc
+		@desc
+	end
+end
+class Page
+	def initialize title
+		@title = title
+	end
+	def title 
+		@title
 	end
 end
 
@@ -45,17 +79,14 @@ end
 
 # routes 
 get '/' do 
-	meta_data = {
-		:title => 'Home',
-		:page_class => 'home'
-	}
-	page_data = {
-		:title => 'Home'
-	}
-	haml :index, :layout => layout('default'), :locals => {:meta => meta_data, :page => page_data}
+	meta = Meta.new('Home','A quick Sinatra.rb app!')
+	page = Page.new('Home')
+	haml :index, :layout => layout('default'), :locals => {:app => app, :meta => meta, :page => page}
 end
 
 get '/post/:title' do |title|
+	meta = Meta.new("#{title} | Post","Block post about #{title}")
+	page = Page.new("#{title} | Post")
 	article = Article.new(title)
-	haml :post, :locals => {:article => article}
+	haml :post, :layout => layout('post'), :locals => {:app => app, :meta => meta, :article => article}
 end
