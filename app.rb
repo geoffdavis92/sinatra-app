@@ -77,7 +77,7 @@ get '/js/bundle.js' do |script|
 	return script
 end
 
-# routes 
+# routes
 get '/' do 
 	meta = Meta.new('Home','A quick Sinatra.rb app!')
 	page = Page.new('Home')
