@@ -3,9 +3,9 @@
 	- locals[:posts].each do |post|
 		%article
 			%h3
-				%a{:href => "/post/#{slug(post[:title])}"}= post[:title]
+				%a{:href => "/post/#{slug(post['title'])}"}= post['title']
 			%small
 				by
-				%a{:href => "/author/#{slug(post[:author])}"}= post[:author]
-			%p= post[:preview]
-			%a{:href => "/post/#{slug(post[:title])}", :target => '_blank'} View Post&nbsp;&raquo;
+				%a{:href => "/author/#{slug(post['author'])}"}= post['author']
+			%p= post['preview']
+			%a{:href => "/post/#{slug(post['title'])}", :target => '_blank'} View Post&nbsp;&raquo;

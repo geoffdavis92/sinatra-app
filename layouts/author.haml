@@ -11,7 +11,7 @@
 		= haml partial('header'), :locals => {:app => app}
 		%main
 			%section
-				%article{:id => slug(article.id), :class => 'post'}
-					= haml partial('post_header'), :locals => {:app => app, :article => article}
+				%article{:id => slug(author.fullname), :class => 'post'}
+					= haml partial('author_header'), :locals => {:app => app, :author => author}
 					= yield
 		= haml partial('footer')
