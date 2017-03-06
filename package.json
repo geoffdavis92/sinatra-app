@@ -5,6 +5,7 @@
   "main": "package.json",
   "scripts": {
     "dashboard": "webpack-dashboard -- webpack-dev-server --config ./webpack.config.js --inline --hot",
+    "sinatra": "ruby app.rb",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
