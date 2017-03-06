@@ -1,0 +1,6 @@
+.post_header
+	%h2{:class => 'post_header_title'}= article.title
+	%small{:class => 'post_header_author'}
+		by
+		%a{:href => "/author/#{slug(article.author)}"}= article.author
+	%small{:class => 'post_header_date'}= article.date

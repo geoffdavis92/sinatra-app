@@ -3,15 +3,11 @@
 		%title= meta.title
 		%meta{:charset => 'utf8'}
 		%meta{:name => 'description', :content => meta.desc}
-		- external_stylesheet_url = 'https://unpkg.com/spectre.css@0.1.27/dist/spectre.css'
+		- external_stylesheet_url = 'https://unpkg.com/awsm.css/dist/awsm.min.css'
 		%link{:href => external_stylesheet_url, :rel => 'stylesheet'}
 		%link{:href => '/css/index.css', :rel => 'stylesheet'}
 	%body
 		= haml partial('header'), :locals => {:app => app}
-		.container
-			.columns
-				.column.col-sm-2
-				.column.col-sm-8
-					= yield
-				.column.col-sm-2
+		%main
+			= yield
 		= haml partial('footer')
